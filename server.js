@@ -6,7 +6,7 @@ const app=express();
 app.use(express.json());
 // mongooosse connection
 mongoose.connect('mongodb+srv://admin:1234@contact-cluster.lfspc.mongodb.net/contacts',function(){console.log("db connected")})
-
+var port= process.env.PORT ||8080;
 //schema 
 const userSchema = mongoose.Schema({
     name:String,
@@ -56,4 +56,4 @@ app.delete("/delete/:id",async function (req,res)
 }
 )
 
-app.listen('5000')
+var server=app.listen(port,function(){console.log("aaapp runing on port8080")})
