@@ -26,7 +26,7 @@ res.send("DATA ADDED")
 catch (error){res.status(500).send(error)}
 })
 
-app.get("/users",async(req,res)=>
+app.get("/",async(req,res)=>
 { const users = await userModel.find({})
 res.send(users)}
 )
