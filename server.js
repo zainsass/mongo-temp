@@ -45,7 +45,7 @@ app.put("/put/:id",async function (req,res){
         const sas = req.params.id;
         const upd = req.body
         const result = await userModel.findByIdAndUpdate(sas,upd)
-        res.send("done")
+        res.send("dosne")
     } 
     catch (error) {console.log("put err")
         
