@@ -4,11 +4,7 @@ const { request } = require("http");
 const mongoose =require("mongoose");
 const cors = require("cors")
 const app=express();
-app.use(
-    cors({
-        origin:"",
-    })
-)
+app.use(cors())
 app.use(express.json());
 // mongooosse connection
 mongoose.connect('mongodb+srv://admin:1234@contact-cluster.lfspc.mongodb.net/contacts',function(){console.log("db connected")})
