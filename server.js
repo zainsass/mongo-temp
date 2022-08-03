@@ -9,7 +9,8 @@ mongoose.connect('mongodb+srv://admin:1234@contact-cluster.lfspc.mongodb.net/con
 var port= process.env.PORT ||8080;
 //schema 
 const userSchema = mongoose.Schema({
-    name:String,
+    userId:String,
+   name:String,
     number:String,
     email:String,
 
@@ -30,6 +31,13 @@ app.get("/",async(req,res)=>
 { const users = await userModel.find({})
 res.send(users)}
 )
+//new get for find by idor namee
+app.get("/:id",async(req,res)=>
+{  const usree= await userModel.findById(id)  
+    res.send(usree)
+}
+)
+
 
 app.put("/put/:id",async function (req,res){
     try {
