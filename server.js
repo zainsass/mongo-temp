@@ -33,7 +33,8 @@ res.send(users)}
 )
 //new get for find by idor namee
 app.get("/:id",async(req,res)=>
-{  const usree= await userModel.findById(id)  
+{  const id = request.params.id 
+     const usree= await userModel.findById(id)  
     res.send(usree)
 }
 )
