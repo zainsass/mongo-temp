@@ -8,8 +8,7 @@ app.use(express.json());
 mongoose.connect('mongodb+srv://admin:1234@contact-cluster.lfspc.mongodb.net/contacts',function(){console.log("db connected")})
 var port= process.env.PORT ||8080;
 //schema 
-const userSchema = mongoose.Schema({
-    userId:String,
+const userSchema = mongoose.Schema({ 
    name:String,
     number:String,
     email:String,
