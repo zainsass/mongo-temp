@@ -53,6 +53,27 @@ app.put("/put/:id",async function (req,res){
         
     }
 })
+//Checking existing name or not
+
+app.post('/postn', function (req, res, next) {
+
+    //Query the database for that name
+    Urls.findOne({'name': req.body.name}, function (err, name) {
+        //If a result is returned, throw an error
+        if (name) {
+            res.send({available: false});
+        }
+        //If not result - its unique and we can continue. 
+        if (!name) {
+            Urls.create(req.body, function (err, post) {
+                if (err) return next(err)
+                res.json(post)
+            })
+        }
+
+    });
+})
+
 
 app.delete("/delete/:id",async function (req,res)
 {
