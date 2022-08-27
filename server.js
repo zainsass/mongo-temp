@@ -23,7 +23,7 @@ app.post("/post",async (req,res)=>
 try
     {await user.save();
 //response.send(user)
-res.send(user)
+res.json(user)
 }
 catch (error){res.status(500).send(error)}
 })
