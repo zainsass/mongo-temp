@@ -28,12 +28,11 @@ res.json(user)
 catch (error){res.status(500).send(error)}
 })
 
-app.get("/f",async(req,res)=>
+app.get("/",async(req,res)=>
 { const users = await userModel.find({})
 res.send(users)}
 )
-//new get for find by idor nameefdkusfdjh 
-//here iam doing nothing buut ,oh no nothing so iam slpof 
+//new get for find by idor namee
 app.get("/get/:name",async(req,res)=>
 {  const isd = req.params.name
      const usree= await userModel.findOne({userId:isd})  
