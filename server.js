@@ -81,8 +81,8 @@ app.delete("/delete/:id",async function (req,res)
         const result = await userModel.findByIdAndDelete(dlt)
         res.send("deleted")
         
-    } catch (error) {res.send("error wooy")
-        
+    } catch (error) {res.send("error hhhwooy")
+        //sasasjdsaaaaaaaaaaaaaaaaa
     }
 }
 )
